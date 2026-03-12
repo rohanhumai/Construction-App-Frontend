@@ -20,46 +20,44 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center justify-center">
-        <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-md sm:p-8 lg:p-10">
-          <h2 className="mb-6 text-center text-2xl font-bold sm:text-3xl">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-6 backdrop-blur-sm sm:px-6 lg:px-8">
+      <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md sm:p-8 md:p-10 lg:p-12">
+        <h2 className="text-2xl font-bold mb-6 text-center">
           Construction App Login
-          </h2>
+        </h2>
 
-          <form onSubmit={handleLogin} className="space-y-4 sm:space-y-5">
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none transition focus:border-black sm:text-base"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border p-2 rounded-xl"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none transition focus:border-black sm:text-base"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full border-gray-500 border-1 p-2 rounded-xl"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-            {error && <p className="text-sm text-red-500">{error}</p>}
+          {error && <p className="text-red-500 text-sm">{error}</p>}
 
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-black px-4 py-3 text-sm text-white transition hover:bg-gray-950 sm:text-base"
-            >
-              Login
-            </button>
-          </form>
+          <button
+            type="submit"
+            className="w-full bg-black text-white p-2 rounded-xl hover:bg-gray-950 transition"
+          >
+            Login
+          </button>
+        </form>
 
-          <p className="mt-4 text-center text-xs text-gray-500 sm:text-sm">
-            Test: test@test.com / 123456
-          </p>
-        </div>
+        <p className="text-xs text-gray-500 mt-4 text-center">
+          Test: test@test.com / 123456
+        </p>
       </div>
     </div>
   );
