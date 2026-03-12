@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200 backdrop-blur-sm">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 backdrop-blur-sm">
       <div className="bg-white p-12 rounded-xl shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Construction App Login
