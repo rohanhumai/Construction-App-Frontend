@@ -35,18 +35,18 @@ export default function DPRForm() {
   };
   return (
     <div className="min-h-screen bg-gray-200 p-4 sm:p-6 md:p-8">
-      <div className="max-w-xl mx-auto bg-white p-5 sm:p-6 rounded shadow">
+      <div className="max-w-xl mx-auto bg-white p-5 sm:p-6 rounded-xl shadow">
         <h1 className="text-2xl font-bold mb-6">DPR Form (Project #{id})</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="date"
-            className="w-full border p-2 rounded-xl"
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
 
           <select
-            className="w-full border p-2 rounded-xl"
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             value={weather}
             onChange={(e) => setWeather(e.target.value)}
           >
@@ -58,7 +58,7 @@ export default function DPRForm() {
 
           <textarea
             placeholder="Work Description"
-            className="w-full border p-2 rounded-xl"
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             rows="4"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -67,7 +67,7 @@ export default function DPRForm() {
           <input
             type="number"
             placeholder="Worker Count"
-            className="w-full border p-2 rounded-xl"
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             value={workers}
             onChange={(e) => setWorkers(e.target.value)}
           />
@@ -77,35 +77,35 @@ export default function DPRForm() {
             multiple
             accept="image/*"
             onChange={handleImageUpload}
-            className="w-full text-sm"
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
           />
 
-          <div className="grid grid-cols-2 gap-2 mt-2 sm:grid-cols-3">
-            {images.map((img, index) => (
-              <img
-                key={index}
-                src={URL.createObjectURL(img)}
-                alt="preview"
-                className="w-full h-20 sm:h-24 object-cover rounded-xl"
-              />
-            ))}
-          </div>
+          {images.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-2">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={URL.createObjectURL(img)}
+                  alt="preview"
+                  className="w-20 h-20 object-cover rounded-xl"
+                />
+              ))}
+            </div>
+          )}
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <button
-              type="submit"
-              className="w-full bg-black text-white p-3 rounded-xl"
-            >
-              Submit DPR
-            </button>
-            <button
-              type="button"
-              onClick={() => navigate("/projects")}
-              className="w-full border p-2 rounded-xl"
-            >
-              Back To Projects
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="w-full rounded-xl border border-black bg-black p-3 text-white transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
+          >
+            Submit DPR
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate("/projects")}
+            className="w-full rounded-xl border border-black p-2 transition duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
+          >
+            Back To Projects
+          </button>
         </form>
       </div>
     </div>

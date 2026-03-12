@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-6 backdrop-blur-sm sm:px-6 lg:px-8">
-      <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md sm:p-8 md:p-10 lg:p-12">
+      <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-md sm:p-8 md:p-10 lg:p-12">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Construction App Login
         </h2>
@@ -30,7 +30,7 @@ export default function Login() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full border p-2 rounded-xl"
+            className="w-full rounded-xl border border-black px-3 py-2.5 transition-colors duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -39,7 +39,7 @@ export default function Login() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full border-gray-500 border-1 p-2 rounded-xl"
+            className="w-full rounded-xl border border-black px-3 py-2.5 transition-colors duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -49,7 +49,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-black text-white p-2 rounded-xl hover:bg-gray-950 transition"
+            className="w-full rounded-xl border border-black bg-black px-3 py-2.5 text-white transition-colors duration-200 hover:border-gray-400 focus:border-gray-400 focus:outline-none"
           >
             Login
           </button>
